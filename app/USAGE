@@ -2,7 +2,7 @@ Description:
     Creates a default AngularJS app
 
 Example:
-    yo slimangular:app [--coffee]
+    yo dashboard:app [--coffee]
 
     This will create:
         Gruntfile.js
