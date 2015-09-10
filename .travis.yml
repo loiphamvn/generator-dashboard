@@ -3,5 +3,5 @@ node_js:
   - '0.10'
 before_install:
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-slimangular' ]; then cd .. && eval "mv $currentfolder generator-slimangular" && cd generator-slimangular; fi
+  - if [ "$currentfolder" != 'generator-dashboard' ]; then cd .. && eval "mv $currentfolder generator-dashboard" && cd generator-dashboard; fi
 
