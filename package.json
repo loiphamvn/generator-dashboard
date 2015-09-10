@@ -67,7 +67,7 @@
   ],
   "license": "MIT",
   "main": "app/index.js",
-  "name": "generator-slimangular",
+  "name": "generator-dashboard",
   "optionalDependencies": {},
   "peerDependencies": {
     "yo": ">=1.0.0"
