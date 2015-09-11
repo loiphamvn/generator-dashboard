@@ -8,10 +8,10 @@ var util = require('util'),
   pluralize = require('pluralize'),
   asciify = require('asciify');
 
-var SlimangularGenerator = module.exports = function SlimangularGenerator(args, options, config) {
+var DashboardGenerator = module.exports = function DashboardGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
-  this.on('end', function() {
+  this.on('end', function () {
     this.installDependencies({
       skipInstall: options['skip-install']
     });
@@ -28,15 +28,15 @@ var SlimangularGenerator = module.exports = function SlimangularGenerator(args, 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
 };
 
-util.inherits(SlimangularGenerator, yeoman.generators.Base);
+util.inherits(DashboardGenerator, yeoman.generators.Base);
 
-SlimangularGenerator.prototype.welcome = function welcome() {
+DashboardGenerator.prototype.welcome = function welcome() {
   if (!this.options['skip-welcome-message']) {
     this.log(yosay());
   }
 };
 
-SlimangularGenerator.prototype.askFor = function askFor() {
+DashboardGenerator.prototype.askFor = function askFor() {
 
   var cb = this.async();
 
@@ -78,7 +78,7 @@ SlimangularGenerator.prototype.askFor = function askFor() {
     default: false
   }];
 
-  this.prompt(prompts, function(props) {
+  this.prompt(prompts, function (props) {
     this.baseName = props.baseName;
     this.databaseType = props.databaseType == 'PostgreSQL' ? 'pgsql' : props.databaseType.toLowerCase();
     this.hostName = props.hostName;
@@ -95,7 +95,7 @@ SlimangularGenerator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
-SlimangularGenerator.prototype.app = function app() {
+DashboardGenerator.prototype.app = function app() {
 
   this.entities = [];
   this.generatorConfig = {
@@ -151,7 +151,7 @@ SlimangularGenerator.prototype.app = function app() {
   this.template('public/views/home/_home.html', publicViewDir + 'home/home.html');
 };
 
-SlimangularGenerator.prototype.projectfiles = function projectfiles() {
+DashboardGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
 };

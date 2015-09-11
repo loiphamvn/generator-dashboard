@@ -6,7 +6,7 @@ var util = require('util'),
   _s = require('underscore.string'),
   pluralize = require('pluralize');
 
-var SlimangularGenerator = module.exports = function SlimangularGenerator(args, options, config) {
+var DashboardGenerator = module.exports = function DashboardGenerator(args, options, config) {
   // By calling `NamedBase` here, we get the argument to the subgenerator call
   // as `this.name`.
   yeoman.generators.NamedBase.apply(this, arguments);
